@@ -1,8 +1,10 @@
 from fastapi import APIRouter, HTTPException
-from app.domain.usecases.item_usecase import ItemUsecase
+
 from app.domain.entities.item import Item
+from app.domain.usecases.item_usecase import ItemUsecase
 
 router = APIRouter()
+
 
 @router.get("/item/{item_id}", response_model=Item)
 async def get_item_info(item_id: int):
